@@ -1,0 +1,28 @@
+@url=http://localhost:3001/api
+@json=Content-Type: application/json
+
+###
+get {{url}}/users
+
+### 注册接口
+post {{url}}/register
+{{json}}
+
+{
+    "username":"user5",
+    "password":"123456"
+}
+
+###
+post {{url}}/login
+# Content-Type: application/json
+{{json}}
+
+{
+    "username":"user3",
+    "password":"123456"
+}
+
+### 获取个人信息
+get {{url}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzkwMzkxNWJhMjEyMDkxODRmYzBiNiIsImlhdCI6MTU1NjY3ODAxMX0.94TpmkExIW62rUNH8oyQDrNAfLy2KqGmICmxUZU0gVs
